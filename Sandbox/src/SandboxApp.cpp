@@ -1,6 +1,6 @@
-#include <Hazel.h>
+#include <Aora.h>
 
-class Sandbox : public Hazel::Application
+class Sandbox : public Aora::Application
 {
 public:
 	Sandbox()
@@ -12,10 +12,9 @@ public:
 	{
 
 	}
-
 };
 
-Hazel::Application* Hazel::CreateApplication()
+Aora::Application* Aora::CreateApplication()
 {
 	return new Sandbox();
 }

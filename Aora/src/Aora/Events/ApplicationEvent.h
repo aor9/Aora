@@ -2,9 +2,9 @@
 
 #include "Event.h"
 
-namespace Hazel {
+namespace Aora {
 
-	class HAZEL_API WindowResizeEvent : public Event
+	class AORA_API WindowResizeEvent : public Event
 	{
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height)
@@ -26,7 +26,7 @@ namespace Hazel {
 		unsigned int m_Width, m_Height;
 	};
 
-	class HAZEL_API WindowCloseEvent : public Event
+	class AORA_API WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() {}
@@ -35,7 +35,7 @@ namespace Hazel {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class HAZEL_API AppTickEvent : public Event
+	class AORA_API AppTickEvent : public Event
 	{
 	public:
 		AppTickEvent() {}
@@ -44,7 +44,7 @@ namespace Hazel {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class HAZEL_API AppUpdateEvent : public Event
+	class AORA_API AppUpdateEvent : public Event
 	{
 	public:
 		AppUpdateEvent() {}
@@ -53,7 +53,7 @@ namespace Hazel {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class HAZEL_API AppRenderEvent : public Event
+	class AORA_API AppRenderEvent : public Event
 	{
 	public:
 		AppRenderEvent() {}

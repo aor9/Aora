@@ -1,3 +1,3 @@
 [submodule "Hazel/vendor/spdlog"]
-	path = Hazel/vendor/spdlog
+	path = Aora/vendor/spdlog
 	url = https://github.com/gabime/spdlog

@@ -1,4 +1,4 @@
-workspace "Hazel"
+workspace "Aora"
 	architecture "x64"
 
 	configurations
@@ -7,19 +7,21 @@ workspace "Hazel"
 		"Release",
 		"Dist"
 	}
+	
+	toolset "v143"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-project "Hazel"
-	location "Hazel"
+project "Aora"
+	location "Aora"
 	kind "SharedLib"
 	language "C++"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	pchheader "hzpch.h"
-	pchsource "Hazel/src/hzpch.cpp"
+	pchheader "aopch.h"
+	pchsource "Aora/src/aopch.cpp"
 
 	files
 	{
@@ -40,8 +42,8 @@ project "Hazel"
 
 		defines
 		{
-			"HZ_PLATFORM_WINDOWS",
-			"HZ_BUILD_DLL"
+			"AO_PLATFORM_WINDOWS",
+			"AO_BUILD_DLL"
 		}
 
 		postbuildcommands
@@ -50,15 +52,15 @@ project "Hazel"
 		}
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "AO_DEBUG"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "AO_RELEASE"
 		optimize "On"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "AO_DIST"
 		optimize "On"
 
 project "Sandbox"
@@ -77,13 +79,13 @@ project "Sandbox"
 
 	includedirs
 	{
-		"Hazel/vendor/spdlog/include",
-		"Hazel/src"
+		"Aora/vendor/spdlog/include",
+		"Aora/src"
 	}
 
 	links
 	{
-		"Hazel"
+		"Aora"
 	}
 
 	filter "system:windows"
@@ -93,17 +95,17 @@ project "Sandbox"
 
 		defines
 		{
-			"HZ_PLATFORM_WINDOWS"
+			"AO_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "AO_DEBUG"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "AO_RELEASE"
 		optimize "On"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "AO_DIST"
 		optimize "On"

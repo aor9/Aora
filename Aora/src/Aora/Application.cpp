@@ -1,10 +1,10 @@
-#include "hzpch.h"
+#include "aopch.h"
 #include "Application.h"
 
-#include "Hazel/Events/ApplicationEvent.h"
-#include "Hazel/Log.h"
+#include "Aora/Events/ApplicationEvent.h"
+#include "Aora/Log.h"
 
-namespace Hazel {
+namespace Aora {
 
 	Application::Application()
 	{
@@ -20,14 +20,13 @@ namespace Hazel {
 		WindowResizeEvent e(1280, 720);
 		if (e.IsInCategory(EventCategoryApplication))
 		{
-			HZ_TRACE(e);
+			AO_TRACE(e);
 		}
 		if (e.IsInCategory(EventCategoryInput))
 		{
-			HZ_TRACE(e);
+			AO_TRACE(e);
 		}
 
 		while (true);
 	}
-
 }

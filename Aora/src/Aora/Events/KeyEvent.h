@@ -2,9 +2,9 @@
 
 #include "Event.h"
 
-namespace Hazel {
+namespace Aora {
 
-	class HAZEL_API KeyEvent : public Event
+	class AORA_API KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -17,7 +17,7 @@ namespace Hazel {
 		int m_KeyCode;
 	};
 
-	class HAZEL_API KeyPressedEvent : public KeyEvent
+	class AORA_API KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode, int repeatCount)
@@ -37,7 +37,7 @@ namespace Hazel {
 		int m_RepeatCount;
 	};
 
-	class HAZEL_API KeyReleasedEvent : public KeyEvent
+	class AORA_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int keycode)

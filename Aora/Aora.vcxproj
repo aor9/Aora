@@ -15,30 +15,31 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{99294D0D-053E-75BE-CEBF-181E3A9371EF}</ProjectGuid>
+    <ProjectGuid>{689B827C-54D2-830D-FDBE-6910E9D4FF0E}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Hazel</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <RootNamespace>Aora</RootNamespace>
+    <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -55,31 +56,31 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-x86_64\Hazel\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-x86_64\Hazel\</IntDir>
-    <TargetName>Hazel</TargetName>
+    <OutDir>..\bin\Debug-windows-x86_64\Aora\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\Aora\</IntDir>
+    <TargetName>Aora</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Release-windows-x86_64\Hazel\</OutDir>
-    <IntDir>..\bin-int\Release-windows-x86_64\Hazel\</IntDir>
-    <TargetName>Hazel</TargetName>
+    <OutDir>..\bin\Release-windows-x86_64\Aora\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\Aora\</IntDir>
+    <TargetName>Aora</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Dist-windows-x86_64\Hazel\</OutDir>
-    <IntDir>..\bin-int\Dist-windows-x86_64\Hazel\</IntDir>
-    <TargetName>Hazel</TargetName>
+    <OutDir>..\bin\Dist-windows-x86_64\Aora\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\Aora\</IntDir>
+    <TargetName>Aora</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>aopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>HZ_PLATFORM_WINDOWS;HZ_BUILD_DLL;HZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>AO_PLATFORM_WINDOWS;AO_BUILD_DLL;AO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -89,18 +90,18 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>..\bin\Debug-windows-x86_64\Hazel\Hazel.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\Aora\Aora.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Hazel\Hazel.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Hazel\Hazel.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Hazel\Hazel.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Aora\Aora.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Aora\Aora.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Aora\Aora.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>aopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>HZ_PLATFORM_WINDOWS;HZ_BUILD_DLL;HZ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>AO_PLATFORM_WINDOWS;AO_BUILD_DLL;AO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -114,18 +115,18 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>..\bin\Release-windows-x86_64\Hazel\Hazel.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Release-windows-x86_64\Aora\Aora.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\Hazel\Hazel.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Hazel\Hazel.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Hazel\Hazel.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Aora\Aora.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Aora\Aora.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Aora\Aora.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>aopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>HZ_PLATFORM_WINDOWS;HZ_BUILD_DLL;HZ_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>AO_PLATFORM_WINDOWS;AO_BUILD_DLL;AO_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -139,28 +140,28 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>..\bin\Dist-windows-x86_64\Hazel\Hazel.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Dist-windows-x86_64\Aora\Aora.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Hazel\Hazel.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Hazel\Hazel.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Hazel\Hazel.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Aora\Aora.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Aora\Aora.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Aora\Aora.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Hazel.h" />
-    <ClInclude Include="src\Hazel\Application.h" />
-    <ClInclude Include="src\Hazel\Core.h" />
-    <ClInclude Include="src\Hazel\EntryPoint.h" />
-    <ClInclude Include="src\Hazel\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\Hazel\Events\Event.h" />
-    <ClInclude Include="src\Hazel\Events\KeyEvent.h" />
-    <ClInclude Include="src\Hazel\Events\MouseEvent.h" />
-    <ClInclude Include="src\Hazel\Log.h" />
-    <ClInclude Include="src\hzpch.h" />
+    <ClInclude Include="src\Aora.h" />
+    <ClInclude Include="src\Aora\Application.h" />
+    <ClInclude Include="src\Aora\Core.h" />
+    <ClInclude Include="src\Aora\EntryPoint.h" />
+    <ClInclude Include="src\Aora\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Aora\Events\Event.h" />
+    <ClInclude Include="src\Aora\Events\KeyEvent.h" />
+    <ClInclude Include="src\Aora\Events\MouseEvent.h" />
+    <ClInclude Include="src\Aora\Log.h" />
+    <ClInclude Include="src\aopch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Hazel\Application.cpp" />
-    <ClCompile Include="src\Hazel\Log.cpp" />
-    <ClCompile Include="src\hzpch.cpp">
+    <ClCompile Include="src\Aora\Application.cpp" />
+    <ClCompile Include="src\Aora\Log.cpp" />
+    <ClCompile Include="src\aopch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>

@@ -3,9 +3,9 @@
 #include "Core.h"
 #include "Events/Event.h"
 
-namespace Hazel {
+namespace Aora {
 
-	class HAZEL_API Application
+	class AORA_API Application
 	{
 	public:
 		Application();
