@@ -7,6 +7,12 @@
     <Filter Include="Aora\Events">
       <UniqueIdentifier>{4C625AB8-B817-D3AD-410C-CD84ADC0C9B1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Aora\Platform">
+      <UniqueIdentifier>{BC2C9A54-28ED-158B-F127-5F085DA75A67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aora\Platform\Windows">
+      <UniqueIdentifier>{F6D276C3-623F-32BE-2B33-CA1B975E5426}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Aora.h" />
@@ -34,6 +40,12 @@
     <ClInclude Include="src\Aora\Log.h">
       <Filter>Aora</Filter>
     </ClInclude>
+    <ClInclude Include="src\Aora\Platform\Windows\WindowsWindow.h">
+      <Filter>Aora\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Aora\Window.h">
+      <Filter>Aora</Filter>
+    </ClInclude>
     <ClInclude Include="src\aopch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="src\Aora\Log.cpp">
       <Filter>Aora</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Aora\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Aora\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\aopch.cpp" />
   </ItemGroup>

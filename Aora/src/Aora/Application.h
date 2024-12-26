@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Window.h"
 
 namespace Aora {
 
@@ -12,6 +13,10 @@ namespace Aora {
 		virtual ~Application();
 
 		void Run();
+
+	private:
+		std::unique_ptr<Window> AoraWindow;
+		bool bRunning = true;
 	};
 
 	// To be defined in CLIENT

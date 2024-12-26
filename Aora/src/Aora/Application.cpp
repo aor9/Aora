@@ -3,11 +3,14 @@
 
 #include "Aora/Events/ApplicationEvent.h"
 #include "Aora/Log.h"
+#include <vulkan/vulkan.h>
+#include <iostream>
 
 namespace Aora {
 
 	Application::Application()
 	{
+		AoraWindow = std::unique_ptr<Window>(Window::Create());
 	}
 
 
@@ -17,16 +20,9 @@ namespace Aora {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
+		while (bRunning)
 		{
-			AO_TRACE(e);
+			AoraWindow->OnUpdate();
 		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			AO_TRACE(e);
-		}
-
-		while (true);
 	}
 }

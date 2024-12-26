@@ -1,3 +1,6 @@
 [submodule "Hazel/vendor/spdlog"]
 	path = Aora/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Aora/vendor/GLFW"]
+	path = Aora/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
