@@ -2,6 +2,8 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Aora/Events/ApplicationEvent.h"
+
 #include "Window.h"
 
 namespace Aora {
@@ -14,7 +16,11 @@ namespace Aora {
 
 		void Run();
 
+		void OnEvent(Event& e);
+
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> AoraWindow;
 		bool bRunning = true;
 	};
